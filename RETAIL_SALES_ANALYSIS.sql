@@ -1,4 +1,5 @@
---Data Exploration
+--Database creation and table creation
+
 
 --How many sales we have?
 SELECT COUNT(*) as total_sale FROM retail_sales
@@ -109,5 +110,6 @@ GROUP BY Shift
 
 
 SELECT EXTRACT(HOUR FROM CURRENT_TIME)
+
 
 
