@@ -1,4 +1,20 @@
 --Database creation and table creation
+CREATE DATABASE p1_retail_db;
+
+CREATE TABLE retail_sales
+(
+    transactions_id INT PRIMARY KEY,
+    sale_date DATE,	
+    sale_time TIME,
+    customer_id INT,	
+    gender VARCHAR(10),
+    age INT,
+    category VARCHAR(35),
+    quantity INT,
+    price_per_unit FLOAT,	
+    cogs FLOAT,
+    total_sale FLOAT
+);
 
 
 --How many sales we have?
@@ -10,7 +26,21 @@ SELECT COUNT(DISTINCT customer_id) as total_sale FROM retail_sales
 --how many unique categories do we have?
 SELECT DISTINCT category FROM retail_sales
 
---data exploration and business key problems
+--how many values do we have in our dataset and how to delete them?
+SELECT * FROM retail_sales
+WHERE 
+    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
+    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
+DELETE FROM retail_sales
+WHERE 
+    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
+    gender IS NULL OR age IS NULL OR category IS NULL OR 
+    quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+
+
+--data analysis and findings
 
 --write a sql query to retrieve all columns for sales made on 2022-11-05.
 SELECT * FROM retail_sales
@@ -110,6 +140,7 @@ GROUP BY Shift
 
 
 SELECT EXTRACT(HOUR FROM CURRENT_TIME)
+
 
 
 
