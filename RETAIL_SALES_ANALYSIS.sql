@@ -16,6 +16,7 @@ CREATE TABLE retail_sales
     total_sale FLOAT
 );
 
+--Data exploration and cleaning
 
 --How many sales we have?
 SELECT COUNT(*) as total_sale FROM retail_sales
@@ -140,6 +141,7 @@ GROUP BY Shift
 
 
 SELECT EXTRACT(HOUR FROM CURRENT_TIME)
+
 
 
 
